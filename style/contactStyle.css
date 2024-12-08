@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --navColor: #1e202b;
+  --weatherColorOneBody: #323544;
+  --weatherColorOneHead: #2d303d;
+  --weatherColorTwoBody: #262936;
+  --weatherColorTwoHead: #222530;
+  --footerColor: #323544;
+  --btnsColor: #009ad8;
+}
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+/* Navbar */
+nav {
+  background-color: var(--navColor);
+}
+.logo img {
+  width: 75px;
+}
+.logo .textLogo span {
+  width: 100%;
+  font-size: 0.7rem;
+  color: gray;
+  font-weight: normal;
+}
+.nav-link {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  padding: 0 1.5rem !important;
+}
+.navbar-nav {
+  --bs-nav-link-color: white;
+  --bs-nav-link-hover-color: var(--btnsColor);
+}
+.navbar-nav,
+.nav-link:focus {
+  border-color: white;
+  border-radius: 20px;
+  color: white;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: var(--btnsColor) !important;
+  border-color: var(--btnsColor);
+}
+.navbar-toggler {
+  transition: all 0.3s;
+  line-height: 1.6;
+  color: white !important;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+}
+.navbar-toggler:hover {
+  color: var(--btnsColor) !important;
+  border-color: var(--btnsColor);
+}
+hr {
+  display: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+@media screen and (max-width: 992px) {
+  .navbar-nav {
+    background-color: var(--footerColor);
+    border-radius: 10px;
+    border: 1px solid gray;
+  }
+  .nav-link.active,
+  .nav-link:hover {
+    border: none;
+  }
+  .nav-link {
+    text-align: center;
+    border: none;
+    padding: 1rem 0;
+  }
+  hr {
+    display: block;
+  }
+}
+/* How to contact us */
+section {
+  background-color: var(--navColor);
+  padding: 2rem 0;
+}
+section .link {
+  background-color: var(--weatherColorTwoBody);
+  color: white;
+  padding: 1rem 2rem;
+  margin-bottom: 4rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+}
+section .link a:hover {
+  text-decoration: underline !important;
+}
+section .reachUs {
+  background-color: var(--weatherColorTwoBody);
+  border-radius: 15px;
+  min-height: 350px;
+  font-size: 0.9rem;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+section .reachUs .contentReachUs img {
+  width: 20px;
+  margin-right: 0.4rem;
+}
+section .contactUs form input {
+  width: 49%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  background-color: transparent;
+  border: 2px solid rgba(128, 128, 128, 0.375);
+  border-radius: 30px;
+  outline: none;
+  caret-color: white;
+  font-size: 0.9rem;
+}
+section .contactUs form input:hover {
+  border-color: var(--btnsColor);
+}
+section .contactUs form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  background-color: transparent;
+  border: 2px solid rgba(128, 128, 128, 0.375);
+  border-radius: 30px;
+  outline: none;
+  caret-color: white;
+  font-size: 0.9rem;
+}
+section .contactUs form div button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  background-color: var(--btnsColor);
+  color: white;
+  border: none;
+  outline: none;
+}
+@media screen and (max-width: 992px) {
+  section .contactUs form input {
+    width: 100%;
+  }
+}
+/* Footer */
+footer {
+  background-color: var(--weatherColorTwoBody);
+}
+footer .input {
+  background-color: var(--navColor);
+  display: flex;
+  border-radius: 35px;
+  padding: 0.3rem;
+}
+footer .input input {
+  width: 100%;
+  background-color: transparent;
+  color: gray;
+  padding: 0.7rem 0 0.7rem 1rem;
+  border-radius: 30px;
+  border: none;
+}
+footer .input input:focus {
+  border: none;
+  outline: none;
+  caret-color: white;
+  color: white;
+}
+footer .input button {
+  padding: 0.7rem 2.5rem;
+  border-radius: 30px;
+  background-color: var(--btnsColor);
+  color: white;
+  border: none;
+  outline: none;
+}
+.footerIcons a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  margin: 0 0.4rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--navColor);
+  color: var(--btnsColor);
+  text-decoration: none;
+  font-size: 1.3rem;
+}

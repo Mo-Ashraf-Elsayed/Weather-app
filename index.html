@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Fontawesome -->
+        <link rel="stylesheet"
+            href="./fontawesome-free-6.6.0-web/css/all.min.css">
+            <!-- Bootstrap framework -->
+        <link rel="stylesheet" href="./style/bootstrap.min.css">
+        <!-- My style -->
+        <link rel="stylesheet" href="./style/indexStyle.css">
+        <title>Weather</title>
+    </head>
+    <body data-bs-spy="scroll"
+        data-bs-target="#navbar-example">
+        <!--Navbar-->
+       <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a class="navbar-brand mb-3" href="#">
+                <div class="logo d-flex pt-3">
+                    <img src="./imgs/logo@2x.png"
+                        alt="Logo for weather app">
+                    <div class="textLogo text-white fw-bold ps-2 fs-6 d-flex flex-wrap">
+                        Weather
+                        <span>tagline goes here</span>
+                    </div>
+                </div>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars navbar-toggler-icon"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 py-3 py-lg-0 mb-lg-0">
+                  <li class="nav-item mx-lg-1">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item mx-lg-1">
+                    <a class="nav-link" href="#">News</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item mx-lg-1">
+                    <a class="nav-link" href="#">Live cameras</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item mx-lg-1">
+                    <a class="nav-link" href="#">Phtots</a>
+                  </li>
+                  <hr>
+                  <li class="nav-item mx-lg-1">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <!--Search & Display weather-->
+        <section class="bgPhoto">
+            <div class="container">
+                <div class="inputSection py-5">
+                    <div class="input">
+                        <input type="text" placeholder="Find your location" id="locationSearch">
+                        <button id="submitSearch">Find</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 today">
+                            <div class="head">
+                                <h5 id="cDayName" class="day fs-6 text-secondary m-0"></h5>
+                                <h5 id="cDaydate" class="date fs-6 text-secondary m-0"></h5>
+                            </div>
+                            <div class="body">
+                                <h4 id="cityName" class="city"></h4>
+                                <h1 id="cDayTemp" class="weather display-1 fw-bold py-4"></h1>
+                                <img id="cDayConditionImg" alt="">
+                                <h6 id="cCondition" class="status"></h6>
+                                <div class="icons d-flex justify-content-evenly flex-wrap text-secondary">
+                                    <span class="mb-2"><img src="./imgs/icon-umberella.png" alt=""> 20%</span>
+                                    <span class="mb-2"><img src="./imgs/icon-wind.png" alt=""> 18km/h</span>
+                                    <span class="mb-2"><img src="./imgs/icon-compass.png" alt=""> EAST</span>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-4 tomorrow">
+                            <div class="head">
+                                <h5 id="nDayName" class="day fs-6 text-secondary m-0"></h5>
+                            </div>
+                            <div class="body">
+                                <img id="nDayCondidionImg" class="mb-3" alt="">
+                                <h3 id="nDayMaxTemp" class="fw-bold"></h3>
+                                <h4 id="nDayMinTemp" class="fs-5 text-secondary my-5 my-lg-4"></h4>
+                                <h6 id="nCondition" class="status"></h6>
+                            </div>
+                    </div>
+                    <div class="col-lg-4 afterTomorrow">
+                            <div class="head">
+                                <h5 id="aNextDayName" class="day fs-6 text-secondary m-0"></h5>
+                            </div>
+                            <div class="body">
+                                <img id="aNextDayCondidionImg" class="mb-3" alt="">
+                                <h3 id="aNextDayMaxTemp" class="fw-bold"></h3>
+                                <h4 id="aNextDayMinTemp" class="fs-5 text-secondary my-5 my-lg-4"></h4>
+                                <h6 id="aNextCondition" class="status"></h6>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Footer-->
+        <footer>
+            <div class="container">
+                <div class="row px-0 px-sm-3">
+                    <div class="col-lg-8">
+                        <div class="inputSection pt-5 pb-3">
+                            <div class="input">
+                                <input type="text" placeholder="Enter your email to subscribe...">
+                                <button class="">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-1">
+                        <div class="footerIcons pt-lg-5 pb-3 d-flex ">
+                            <a href="https://www.facebook.com/profile.php?id=100007016768757"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://x.com/AshrafMoha3869"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href="https://github.com/Mo-Ashraf-Elsayed"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 ps-4">
+                        <p class="text-secondary pb-4">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+            
+        </footer>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
