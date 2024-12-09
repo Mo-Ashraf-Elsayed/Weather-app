@@ -1,7 +1,8 @@
 var inputSearch = document.getElementById("locationSearch");
 var btnSubmitSearch = document.getElementById("submitSearch");
-var cityName = "cairo1";
-var countryFromWeatherRequest;
+var latitude;
+var longitude;
+var latAndLonLocation;
 var cityFromWeatherRequest;
 var days = [
   "Sunday",
@@ -26,8 +27,6 @@ var months = [
   "November",
   "December",
 ];
-var latitude;
-var longitude;
 
 //current day elements
 var eleCurrDayName = document.getElementById("cDayName");
@@ -58,50 +57,24 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function (p) {
     latitude = p.coords.latitude;
     longitude = p.coords.longitude;
+    latAndLonLocation = `${latitude},${longitude}`
+    console.log(latAndLonLocation)
     // if(navigator.geolocation.getCurrentPosition(function (p) {})==undefined){ => بترجع ايه
     //     console.log("-------------")
     // }
-    // getWeather();
-    getCountry();
+    getWeather();
   });
 } else {
   console.log("The browser isn't support navigator.geolocation");
 }
-async function getCountry() {
-  await getWeather();
-  var response = await fetch(
-    // api from opencagedata to know the country from latitude and longitude
-    `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=303a5e5cf5b64c588fc7788c675222f1&language=en`
-  );
-  var data = await response.json();
-  console.log(data);
-  // Check if data is valid
-  if (data.results.length > 0) {
-    var country1 = data.results[0].components.country;
-    if (country1 == countryFromWeatherRequest) {
-      cityName = cityFromWeatherRequest;
-      console.log(cityName, "from country req");
-      await getWeather();
-    }
-    console.log(
-      `The country at latitude ${latitude} and longitude ${longitude} is ${country1}.`
-    );
-  } else {
-    console.log("No country found for these coordinates.");
-  }
-}
 async function getWeather() {
   // console.log(data)
   var weather = await fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=bd41354009ff4be2ac5121909240612&q=${cityName}&days=3`
+    `https://api.weatherapi.com/v1/forecast.json?key=bd41354009ff4be2ac5121909240612&q=${latAndLonLocation}&days=3`
   );
   var finalWeather = await weather.json();
-  countryFromWeatherRequest = finalWeather.location.country;
+  console.log(finalWeather)
   cityFromWeatherRequest = finalWeather.location.name.toLowerCase();
-  console.log(cityName, "from weather req");
-  console.log(cityFromWeatherRequest);
-  console.log(countryFromWeatherRequest);
-
   //current day
   eleCurrDayName.innerHTML = days[new Date().getDay()];
   eleCurrDayDate.innerHTML = `${new Date().getDate()} ${
@@ -145,12 +118,10 @@ async function getWeather() {
     finalWeather.forecast.forecastday[2].day.condition.text;
 }
 // to search for a city to know its weather
-inputSearch.addEventListener("input", search);
-btnSubmitSearch.addEventListener('click',search)
-function search(e) {
-  cityName = inputSearch.value;
+inputSearch.addEventListener("input", function (e) {
+  latAndLonLocation = this.value;
   getWeather();
   if (e.inputType === "deleteContentBackward") {
     getWeather();
   }
-}
+});
