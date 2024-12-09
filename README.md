@@ -1,12 +1,12 @@
 # Weather App 
 
 ## Overview
-This is a simple weather app built using HTML, CSS, Bootstrap, and JavaScript. It displays the weather for the current day, the next day, and the day after the next day based on the city selected by the user. The app also includes a contact page for users to get in touch and a responsive design with a clean user interface.
+This is a simple weather app built using HTML, CSS, Bootstrap, and JavaScript. It displays the weather for the current day, the next day, and the day after the next day based on user location or the city which the user will search for it in input search. The app also includes a contact page for users to get in touch and a responsive design with a clean user interface.
 
 ### Features:
 - Display the weather of the current day, the next day, and the day after the next day.
 - Permission request to access user's location and show weather for their current location.
-- Search for weather information by city or country.
+- Search for weather information by city or country or latitude&longitude ex => (26.5626,31.7449).
 - Shows temperature, weather condition, and relevant weather icons (sunny, cloudy, night mode).
 - Dynamic weather details for each day.
 - Navbar with links to navigate to the Home page and Contact page.
@@ -15,7 +15,7 @@ This is a simple weather app built using HTML, CSS, Bootstrap, and JavaScript. I
 
 ## Pages:
 The app consists of two main pages:
-1. **Home Page**: Displays weather information for the selected city and includes a search bar.
+1. **Home Page**: Displays weather information for the selected city based on user location and includes a search bar.
 2. **Contact Page**: A static page with contact details (phone number, location) and a form to collect user emails.
 
 ## How It Works:
@@ -26,8 +26,8 @@ The app consists of two main pages:
   - When the user clicks on the **Contact** link, they are redirected to the contact page.
   
 - **Search Bar**:
-  - The user can search for a specific city or country to view the weather details.
-  - A search bar is placed above the weather details section where users can input the city name.
+  - The user can search for a specific city or country latitude&longitude ex => (26.5626,31.7449) to view the weather details.
+  - A search bar is placed above the weather details section where users can search.
 
 - **Weather Information**:
   - The weather for three days is displayed in three separate sections:
@@ -39,7 +39,7 @@ The app consists of two main pages:
 - **Location Permission**:
   - On the first load, the app asks for the user's permission to access their location.
   - If the user clicks "Allow," the app displays weather data for the user's current location.
-  - If the user clicks "Block," the app will display nothing until the user manually search for a city in input search.
+  - If the user clicks "Block," the app will display nothing until the user manually search in input search.
 
 - **Footer**:
   - Contains an email input field and links to social media accounts for contact.
@@ -59,9 +59,8 @@ The app consists of two main pages:
 
 ---
 
-## APIs Used:
-- The weather data is fetched using an external API from (weather api) website to get real-time weather information for the selected city.
-- The location of the user using an external API from (OpenCage) website to get the city of the user from latitude and longitude
+## API Used:
+- The weather data is fetched using an external API from (weather api) website to get real-time weather information for the location of the user or the city which the user will search for it in input search.
 
 ---
 
